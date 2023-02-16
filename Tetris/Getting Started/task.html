@@ -1,0 +1,139 @@
+<h5 id="description">Description</h5>
+<p>The original Tetris game has 7 unique pieces, each made up of 4 segments: the <code class="language-python">T</code> piece, the <code class="language-python">O</code> piece, the <code class="language-python">L</code> piece, the <code class="language-python">J</code> piece, the <code class="language-python">I</code> piece, the <code class="language-python">S</code> piece, and the <code class="language-python">Z</code> piece.</p>
+<p>In this stage, you need to design the pieces and show how they can be rotated counterclockwise at 90 degrees inside a 4x4 grid.</p>
+<pre><code class="language-no-highlight">00 01 02 03
+04 05 06 07
+08 09 10 11
+12 13 14 15</code></pre>
+<p>The numbers <code class="language-python">00 01 02 03</code> represent the first items on the four columns of the grid. The numbers below represent the first items of the grid rows.</p>
+<pre><code class="language-no-highlight">00
+04
+08
+12</code></pre>
+<p>So, a 4x4 grid should have four rows and columns — naturally, a 4x4 matrix. Every element in our matrix is filled with a hyphen, <code class="language-python">-</code>, and one space.</p>
+<pre><code class="language-python">- - - -
+- - - -
+- - - -
+- - - -</code></pre>
+<p>Each piece is designed with the help of four zeros <code class="language-python">(0)</code>. They are our building segments. In the end, we should have the following:</p>
+<p>The <code class="language-python">I</code> piece:</p>
+<pre><code class="language-no-highlight">- 0 - -
+- 0 - -
+- 0 - -
+- 0 - -</code></pre>
+<p>The <code class="language-python">S</code> piece:</p>
+<pre><code class="language-no-highlight">- - - -
+- 0 0 -
+0 0 - -
+- - - -</code></pre>
+<p>The <code class="language-python">Z</code> piece:</p>
+<pre><code class="language-no-highlight">- - - -
+0 0 - -
+- 0 0 -
+- - - -</code></pre>
+<p>The <code class="language-python">L</code> piece:</p>
+<pre><code class="language-no-highlight">- 0 - -
+- 0 - -
+- 0 0 -
+- - - -</code></pre>
+<p>The <code class="language-python">J</code> piece:</p>
+<pre><code class="language-no-highlight">- - 0 -
+- - 0 -
+- 0 0 -
+- - - -</code></pre>
+<p>The <code class="language-python">O</code> piece:</p>
+<pre><code class="language-no-highlight">- - - -
+- 0 0 -
+- 0 0 -
+- - - -</code></pre>
+<p>The <code class="language-python">T</code> piece:</p>
+<pre><code class="language-no-highlight">- 0 - -
+0 0 0 -
+- - - -
+- - - -</code></pre>
+<h5 id="objectives">Objectives</h5>
+<p>In this stage, your program should:</p>
+<ol>
+<li>Create a 4x4 grid. </li>
+<li>Design seven unique pieces: <code class="language-python">I, S, Z, L, J, O, T</code></li>
+<li>Design the rotated states of the unique pieces. </li>
+<li>The pieces and their rotated states should be placed inside one list. The unique piece should take the first position in the list. the next positions should be filled with the pieces rotated by 90 degrees counterclockwise.</li>
+<li>Rotate the pieces inside the grid. The piece is rotated automatically and should appear in a new grid </li>
+<li>Print and rotate the unique pieces in the order they were created. Separate each new grid with <strong>one</strong> empty line, as shown in the Examples below.</li>
+</ol>
+<p></p><div class="alert alert-primary">There are several ways to represent the figures and their rotated states, use the design shown below for the sake of consistency.</div><p></p>
+<pre><code class="language-python">O = [[5, 6, 9, 10]]
+I = [[1, 5, 9, 13], [4, 5, 6, 7]]
+S = [[6, 5, 9, 8], [5, 9, 10, 14]]
+Z = [[4, 5, 9, 10], [2, 5, 6, 9]]
+L = [[1, 5, 9, 10], [2, 4, 5, 6], [1, 2, 6, 10], [4, 5, 6, 8]]
+J = [[2, 6, 9, 10], [4, 5, 6, 10], [1, 2, 5, 9], [0, 4, 5, 6]]
+T = [[1, 4, 5, 6], [1, 4, 5, 9], [4, 5, 6, 9], [1, 5, 6, 9]]</code></pre>
+<p></p><div class="alert alert-primary">Print a unique piece first. Then print new grids with all its rotated states. The <span style="color: #000000;">O</span> piece does not change on rotation, so it has only one state. A piece will be rotated four times as shown in the examples below.</div><p></p>
+<h5 id="examples">Examples</h5>
+<p>The example below shows how your program should work.</p>
+<p>The greater-than symbol followed by a space (<code class="language-python">&gt; </code>) represents the user input. Note that it's not part of the input.</p>
+<p><strong>Example 1: </strong><em>typing "T" as input</em></p>
+<pre><code class="language-no-highlight">&gt; T
+
+- - - -
+- - - -
+- - - -
+- - - -
+
+- 0 - -
+0 0 0 -
+- - - -
+- - - -
+
+- 0 - -
+0 0 - -
+- 0 - -
+- - - -
+
+- - - -
+0 0 0 -
+- 0 - -
+- - - -
+
+- 0 - -
+- 0 0 -
+- 0 - -
+- - - -
+
+- 0 - -
+0 0 0 -
+- - - -
+- - - -</code></pre>
+<p><strong>Example 2: </strong><em>typing "J" as input</em></p>
+<pre><code class="language-no-highlight">&gt; J
+
+- - - -
+- - - -
+- - - -
+- - - -
+
+- - 0 -
+- - 0 -
+- 0 0 -
+- - - -
+
+- - - -
+0 0 0 -
+- - 0 -
+- - - -
+
+- 0 0 -
+- 0 - -
+- 0 - -
+- - - -
+
+0 - - -
+0 0 0 -
+- - - -
+- - - -
+
+- - 0 -
+- - 0 -
+- 0 0 -
+- - - -</code></pre>

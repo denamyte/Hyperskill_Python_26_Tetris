@@ -104,13 +104,13 @@ files:
     if __name__ == '__main__':
         Tetris('tetris.game').run_tests()
   learner_created: false
-- name: tetris/data.py
-  visible: true
-  learner_created: true
 - name: ./my_test.py
   visible: true
   learner_created: true
-feedback_link: https://hyperskill.org/projects/147/stages/791/implement#comment
+- name: tetris/board.py
+  visible: true
+  learner_created: true
+feedback_link: https://hyperskill.org/learn/step/11891#comment
 status: Failed
 feedback:
   message: |-

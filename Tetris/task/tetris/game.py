@@ -2,11 +2,11 @@ from board import Board
 
 
 def main():
-    fg_name = input()
+    piece_name = input()
     board = Board(*[int(x) for x in input().split()])
     print()
     prn(board)
-    board.put_figure(fg_name)
+    board.put_piece(piece_name)
     prn(board)
     while (cmd := input()) != 'exit':
         print()
@@ -14,9 +14,9 @@ def main():
             case 'rotate':
                 board.rotate()
             case c if c in ['left', 'right']:
-                board.move(c)
+                board.shift(c)
             case 'down':
-                board.down()
+                board.move_down()
 
         prn(board)
 

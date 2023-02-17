@@ -298,9 +298,9 @@ files:
             return '\n'.join(' '.join(SYM_MAP[num] for num in row)
                              for row in self.array_f)
   learner_created: true
-feedback_link: https://hyperskill.org/projects/147/stages/792/implement#comment
+feedback_link: https://hyperskill.org/learn/step/11892#comment
 status: Solved
 feedback:
   message: Congratulations!
   time: "Fri, 17 Feb 2023 00:11:08 UTC"
-record: -1
+record: 2
